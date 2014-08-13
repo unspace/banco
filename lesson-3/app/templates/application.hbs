@@ -1,0 +1,26 @@
+<header>
+  <h1 class="logo">
+    {{#link-to "index"}}
+      {{banco-wordmark height=31 width=130}}
+    {{/link-to}}
+  </h1>
+
+  {{#if session.id}}
+    <nav role="navigation">
+      <ul>
+        <li>{{session.name}}</li>
+      </ul>
+    </nav>
+  {{/if}}
+</header>
+
+<main role="main">
+  {{render "sidebar"}}
+  {{outlet}}
+</main>
+
+<footer>
+  <span>Banco Financial Group Website &copy; {{unbound year}}</span>
+</footer>
+
+{{outlet "overlay"}}
