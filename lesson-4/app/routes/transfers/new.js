@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    return this.store.createRecord('transfer');
+    // we need to create a new trasfer here
   },
 
   afterModel: function() {
@@ -23,16 +23,10 @@ export default Ember.Route.extend({
 
   actions: {
     willTransition: function(transition) {
-      var model = this.modelFor('transfers/new');
+      // if the user tries to leave the route
+      // before saving the transfer we should destroy the model
 
-      if (model.get('isLoading')) {
-        transition.abort();
-        return;
-      }
-
-      if (model.get('isDirty')) {
-        model.deleteRecord();
-      }
+      // if the trasfer is being saved we want to prevent the transition from happening
     }
   }
 });

@@ -6,11 +6,9 @@ export default Ember.ObjectController.extend({
 
   actions: {
     submit: function() {
-      var controller = this;
-
-      this.get('model').save().then(function(transfer) {
-        controller.transitionToRoute('transfers.confirm', transfer);
-      }, Ember.K);
+      // we need to call save() on the model object
+      // once save() is completed we want to transition to
+      // 'transfers.confirm'
     }
   }
 });
