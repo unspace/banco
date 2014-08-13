@@ -7,20 +7,12 @@ export default Ember.Route.extend({
   },
 
   renderTemplate: function() {
-    this.render('account/transactions/image', {
-      into: 'application',
-      outlet: 'overlay'
-    });
+    // Here we need to render the template for the modal dialog
   },
 
   actions: {
     close: function() {
-      this.disconnectOutlet({
-        parentView: 'application',
-        outlet: 'overlay'
-      });
-
-      this.transitionTo('account.transactions', this.modelFor('account'));
+      // Here we want to destroy the modal and transition back to the transaction list
     }
   }
 });

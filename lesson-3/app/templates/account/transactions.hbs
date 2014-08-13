@@ -59,9 +59,7 @@
           </div>
 
           {{#if transaction.hasImage}}
-            {{#link-to "account.transactions.image" account transaction class="image" title="View full-size image"}}
               <img {{bind-attr src=transaction.imageUrl}} width="72" height="34">
-            {{/link-to}}
           {{/if}}
         </td>
 
