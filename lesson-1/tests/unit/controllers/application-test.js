@@ -6,6 +6,6 @@ moduleFor('controller:application', 'ApplicationController', {
   needs: ['controller:session']
 });
 
-test('it provides the current year', function(){
+test('Lesson 1 - Exercice 2 - it provides the current year', function(){
   equal(this.subject().get('year'), new Date().getFullYear());
 });

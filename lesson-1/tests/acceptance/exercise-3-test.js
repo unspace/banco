@@ -2,7 +2,7 @@ import Ember from 'ember';
 import startApp from '../helpers/start-app';
 var App;
 
-module('Acceptance: Sidebar', {
+module('Acceptance: Lesson 1 - Exercise 3', {
   setup: function() {
     App = startApp();
   },
@@ -12,7 +12,7 @@ module('Acceptance: Sidebar', {
 });
 
 test('it links to the welcome page', function() {
-  visit('/');
+  visit('/loading');
 
   andThen(function() {
     click(find('nav.sidebar li a')[0]);
@@ -24,10 +24,10 @@ test('it links to the welcome page', function() {
 });
 
 test('link to welcome is active when visiting index', function() {
-  visit('/');
+  visit('/loading');
 
   andThen(function() {
-    click(find('nav.sidebar li')[0]);
+    click(find('nav.sidebar li a')[0]);
   });
 
   andThen(function() {

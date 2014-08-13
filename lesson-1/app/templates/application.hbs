@@ -1,24 +1,21 @@
 <header>
   <h1 class="logo">
-    {{#link-to "index"}}
-      {{banco-wordmark height=31 width=130}}
-    {{/link-to}}
   </h1>
 
   {{#if session.id}}
     <nav role="navigation">
       <ul>
-        <li>{{session.name}}</li>
+        <li></li>
       </ul>
     </nav>
   {{/if}}
 </header>
 
 <main role="main">
-  {{render "sidebar"}}
   {{outlet}}
+  {{render "sidebar"}}
 </main>
 
 <footer>
-  <span>Banco Financial Group Website &copy; {{unbound year}}</span>
+  <span>Banco Financial Group Website &copy; {{year}}</span>
 </footer>

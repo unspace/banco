@@ -2,7 +2,7 @@ import Ember from 'ember';
 import startApp from '../helpers/start-app';
 var App;
 
-module('Acceptance: Index', {
+module('Acceptance: Lesson 1 - Exercise 1', {
   setup: function() {
     App = startApp();
   },
