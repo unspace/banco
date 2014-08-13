@@ -1,0 +1,19 @@
+{{#if template}}
+  {{yield}}
+
+  {{#if isInvalid}}
+    <em class="ui-form-error"><span>{{errors.firstObject.message}}</span></em>
+  {{/if}}
+{{else}}
+  <label {{bind-attr for=fieldGuid}}>
+    {{label}}
+  </label>
+
+  <span class="ui-form-control-container">
+    {{partial controlPartialPath}}
+
+    {{#if isInvalid}}
+      <em class="ui-form-error"><span>{{errors.firstObject.message}}</span></em>
+    {{/if}}
+  </span>
+{{/if}}

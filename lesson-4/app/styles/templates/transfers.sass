@@ -1,0 +1,29 @@
+table.transfers
+  .transfer-amount
+    text-align: right
+
+  .transfer-state
+    text-align: center
+
+table.transfer
+  hi: ok
+
+.transfer-state .state
+  background: #aaa
+  color: white
+  font-size: 14px
+  font-weight: bold
+  display: inline-block
+  height: 26px
+  line-height: 26px
+  border-radius: 12px
+  padding: 0 10px
+
+  &.complete
+    background: #69aa55
+
+  &.pending
+    background: #55a1aa
+
+  &.failed
+    background: #ff4141

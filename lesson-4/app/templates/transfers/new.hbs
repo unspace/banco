@@ -1,0 +1,31 @@
+<header>
+  <h1>Transfer Funds</h1>
+</header>
+
+{{#ui-form model=model action="submit"}}
+  <fieldset>
+    {{ui-form-field for="account"
+      label="From Account"
+      type="select"
+      items=accounts
+      labelPath="detail"
+      selected=account}}
+
+    {{ui-form-field for="payee"
+      label="To Payee"
+      type="select"
+      items=payees
+      labelPath="detail"
+      selected=payee}}
+
+    {{ui-form-field for="amountInCents"
+      type="dollars"
+      label="Amount"}}
+  </fieldset>
+
+  <fieldset class="actions">
+    <button type="submit">Transfer Funds</button>
+    <span class="or">or</span>
+    {{#link-to "transfers" class="cancel"}}Cancel{{/link-to}}
+  </fieldset>
+{{/ui-form}}

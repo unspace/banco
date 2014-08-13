@@ -1,0 +1,20 @@
+=button
+  outline: none
+  text-decoration: none
+  display: inline-block
+  background-color: $blue
+  border: 2px solid $blue
+  height: 33px
+  line-height: 31px
+  padding: 0 $gutter / 2
+  margin: 0
+  border-radius: 5px
+  color: white
+
+  &:hover
+    background-color: lighten($blue, 5%)
+    border-color: lighten($blue, 5%)
+
+  &:active
+    background: rgba(white, 0.75)
+    color: $blue

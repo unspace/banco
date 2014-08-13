@@ -1,0 +1,55 @@
+<header>
+  <h1>Bank Accounts</h1>
+</header>
+
+<table class="content-table accounts">
+  <thead>
+    <tr>
+      <th class="account-info">
+        Account
+      </th>
+
+      <th class="account-updated">
+        Last Active
+      </th>
+
+      <th class="account-balance">
+        Balance
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each account in sorted}}
+      {{#link-to "account.transactions" account tagName="tr" class="link"}}
+        <td class="account-info">
+          <div class="label">
+            {{account.label}}
+          </div>
+
+          <div class="details">
+            <span class="number">
+              {{account.number}}
+            </span>
+
+            <span class="type">
+              {{account.description}}
+            </span>
+
+            <span class="currency">
+              {{account.currency}}
+            </span>
+          </div>
+        </td>
+
+        <td class="account-updated">
+          {{rel-time time=account.updatedAt}}
+        </td>
+
+        <td class="account-balance">
+          {{fmt-dollars cents=account.balanceInCents}}
+        </td>
+      {{/link-to}}
+    {{/each}}
+  </tbody>
+</table>
