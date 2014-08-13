@@ -1,0 +1,15 @@
+{{#if template}}
+  {{yield}}
+{{else}}
+  <label {{bind-attr for=fieldGuid}}>
+    {{label}}
+  </label>
+
+  <span class="ui-form-control-container">
+    {{partial controlPartialPath}}
+  </span>
+{{/if}}
+
+{{#if isInvalid}}
+  <em class="ui-form-error"><span>{{errors.firstObject.message}}</span></em>
+{{/if}}

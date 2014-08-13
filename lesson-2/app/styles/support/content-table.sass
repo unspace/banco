@@ -1,0 +1,56 @@
+table.content-table
+  width: 100%
+
+  tr.link
+    cursor: pointer
+
+    td
+      +transition(background-color ease-in-out $transition-duration)
+
+    &:hover td
+      background-color: $cell-hover-yellow
+
+  th
+    background: lighten($banco-orange, 30%)
+    text-align: left
+    height: $header-height / 2
+    border-bottom: none
+
+  td
+    height: $header-height
+    text-align: left
+    background: white
+    border-bottom: 1px solid #ddd
+
+  tr:nth-of-type(even) td
+    background-color: lighten($banco-orange, 49%)
+
+  th, td
+    font-size: 16px
+    padding: 0 $gutter / 2
+    vertical-align: middle
+
+    &:first-child
+      padding-left: $gutter
+
+    &:last-child
+      padding-right: $gutter
+
+    .label
+      position: relative
+      top: -1px
+      font-weight: bold
+      font-size: 16px
+      line-height: 24px
+
+    .details
+      font-size: 14px
+      color: #888
+
+      span
+        &:after
+          content: "•"
+          color: lighten($banco-dark-orange, 50%)
+
+        &:last-child:after
+          content: ""
